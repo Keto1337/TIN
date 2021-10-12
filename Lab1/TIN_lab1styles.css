@@ -1,0 +1,60 @@
+i {
+	color: red;
+	font-size: 10;
+}
+
+b {
+	color: violet;
+	font-size: 20;
+	clear: right;
+}
+
+p {
+	color: brown;
+	font-size: 15;
+}
+
+h1, h3 {
+	color: purple;
+}
+
+th {
+	color: blue;
+	background-color: red;
+}
+
+i, b, p, h1, h3 {
+	font-family: sans-serif;
+}
+
+ul.a {
+	list-style-type: square;
+}
+
+ul.b {
+	list-style-type: circle;
+}
+
+body {
+	background-color: lightgrey;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	border: 2px solid black;
+}
+
+img.img1 {
+	width: 100px;
+	height: 100px;
+	float: right;
+}
+
+img.img2 {
+	width: 100px;
+	height: 100px;
+	float: left;
+}
