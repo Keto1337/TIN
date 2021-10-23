@@ -6,7 +6,7 @@
 	<body>
 	
 		<form align="center">
-			<table>
+			<table align="center" id="mandatory">
 				<tr>
 					<th align="left"><label for="name">Name:</label></th>
 					<td><input type="text" name="name"></td>
@@ -19,19 +19,21 @@
 			
 			<br>
 			
-			<label for="check">Do you accept agreement rules?</label>
+			<label for="check" class="check" id="mandatory">Do you accept agreement rules?</label>
 			<input type="checkbox" name="check"><br><br>
 			
-			<label for="radiogroup">This one</label>
+			<div id="radio">
+			<label for="radiogroup" id="other">This one</label>
+			<input type="radio" name="radiogroup"><br>
+			<label for="radiogroup" id="other">or this one</label>
+			<input type="radio" name="radiogroup"><br>
+			<label for="radiogroup" id="other">or this one</label>
 			<input type="radio" name="radiogroup">
-			<label for="radiogroup">or this one</label>
-			<input type="radio" name="radiogroup">
-			<label for="radiogroup">or this one</label>
-			<input type="radio" name="radiogroup">
+			</div>
 			
 			<br><br>
 			
-			<select name="options">
+			<select name="options" id="mandatory">
 				<option value="">--Please choose an option--</option>
 				<option value="option1">Option1</option>
 				<option value="option2">Option2</option>
@@ -41,7 +43,7 @@
 			
 			<br><br>
 			
-			<textarea style="resize: none" rows="3" cols="10">Enter text:</textarea>
+			<textarea style="resize: none" rows="3" cols="10" id="other"></textarea>
 			
 			<br><br>
 			
