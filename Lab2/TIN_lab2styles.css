@@ -5,3 +5,25 @@ body {
 form {
 	font-family: sans-serif;
 }
+
+label.check{
+	font-size: 13;
+	font-weight: bold;
+}
+
+th{
+	font-size: 16;
+}
+
+#mandatory{
+	background-color: yellow;
+}
+
+#other{
+	background-color: lightblue;
+}
+
+#radio{
+	font-size: 15;
+}
+
