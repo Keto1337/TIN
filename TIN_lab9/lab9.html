@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>lab 9</title>
+	</head>
+	
+	<body>
+	
+		<form align="center">
+			<table align="center" id="mandatory">
+				<tr>
+					<th align="left"><label for="num1">Number1:</label></th>
+					<td><input type="number" name="num1" id="num1"></td>
+				</tr>
+				<tr>
+					<th align="left"><label for="operator">Operator:</label></th>
+					<td>
+						<select name="operator" id="operator">
+							<option value="+">+</option>
+							<option value="-">-</option>
+							<option value="*">*</option>
+							<option value="/">/</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th align="left"><label for="num2">Number2:</label></th>
+					<td><input type="number" name="num2" id="num2"></td>
+				</tr>
+			</table>
+			
+			<button type="button" id="resultButton">Submit</button>
+			<input type="reset" value="Reset">
+		</form>
+		
+		<script type="text/javascript">
+			var req = new XMLHttpRequest();
+			
+			req.onreadystatechange =
+				function() {
+					var done = 4,
+						ok = 200;
+						
+					if (req.readyState == done && req.status == ok) {
+						var json = JSON.parse(req.responseText);
+						alert(json.number1 + " " + json.operator + " " + json.number2 + " = " + json.result);
+					}
+				};
+			
+			var resultButton = document.getElementById("resultButton");
+			
+			resultButton.addEventListener("click", () => {
+				var url = "http://localhost:3000/calculate";
+				var num1 = document.getElementById("num1").value;
+				var operator = document.getElementById("operator").value;
+				var num2 = document.getElementById("num2").value;
+				
+				req.open("POST", url, true);
+				req.setRequestHeader("Content-Type", "application/json");
+				
+				var data = JSON.stringify({number1: num1, operator: operator, number2: num2});
+				req.send(data);
+			});
+		</script>
+	</body>
+</html>
